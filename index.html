@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>الشهادة الصحية | بلدي</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Tajawal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FontAwesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      body {
+        font-family: "Tajawal", sans-serif;
+        background-color: #f8f9fa;
+      }
+      .balady-green {
+        background-color: #006d64;
+      }
+      .text-balady-green {
+        color: #006d64;
+      }
+      .card-shadow {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body class="bg-white min-h-screen pb-10">
+    <!-- Navbar -->
+    <nav
+      class="balady-green text-white px-4 py-3 flex justify-between items-center shadow-md sticky top-0 z-50"
+    >
+      <!-- Logo Area -->
+      <div class="flex items-center gap-2">
+        <a href="https://balady.gov.sa/ar" target="_blank">
+          <img
+            src="logo(1).svg"
+            alt="Balady Logo"
+            class="h-12 w-auto brightness-0 invert"
+          />
+        </a>
+      </div>
+
+      <!-- Menu Icon -->
+      <button class="text-2xl focus:outline-none" onclick="toggleMenu()">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </nav>
+
+    <!-- Sidebar Menu -->
+    <div id="sideMenu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50">
+      <div class="p-4 balady-green text-white flex justify-between items-center">
+        <h3 class="font-bold text-lg">القائمة</h3>
+        <button onclick="toggleMenu()" class="text-2xl">
+          <i class="fa-solid fa-times"></i>
+        </button>
+      </div>
+      <div class="p-4">
+        <a href="certificate.html" class="block w-full bg-balady-green text-white text-center py-3 px-4 rounded-lg font-semibold hover:opacity-90 transition-opacity">
+          <i class="fa-solid fa-print ml-2"></i>
+          طباعة الشهادة
+        </a>
+      </div>
+    </div>
+
+    <!-- Overlay -->
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40" onclick="toggleMenu()"></div>
+
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById('sideMenu');
+        const overlay = document.getElementById('overlay');
+        
+        if (menu.classList.contains('translate-x-full')) {
+          menu.classList.remove('translate-x-full');
+          overlay.classList.remove('hidden');
+        } else {
+          menu.classList.add('translate-x-full');
+          overlay.classList.add('hidden');
+        }
+      }
+    </script>
+
+    <!-- Main Content -->
+    <main class="max-w-md mx-auto pt-4 px-4">
+      <!-- Title -->
+      <h1 class="text-center text-2xl font-bold text-gray-700 mb-6">
+        الشهادة الصحية
+      </h1>
+
+      <!-- Photo Section -->
+      <div class="flex justify-center mb-6">
+        <div
+          class="w-32 h-40 bg-gray-200 rounded-md overflow-hidden shadow-sm relative"
+        >
+          <!-- User Photo -->
+          <img
+            src="Y.jpg"
+            alt="User Photo"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+
+      <!-- Info Cards Container -->
+      <div class="space-y-3">
+        <!-- Card: Amanah -->
+        <div
+          class="bg-gray-50 rounded-lg p-3 border border-gray-200 card-shadow text-right"
+        >
+          <div class="text-gray-900 font-bold text-sm mb-1">الامانة</div>
+          <div class="text-gray-600 text-sm">الرياض</div>
+        </div>
+
+        <!-- Card: Baladia -->
+        <div
+          class="bg-gray-50 rounded-lg p-3 border border-gray-200 card-shadow text-right"
+        >
+          <div class="text-gray-900 font-bold text-sm mb-1">البلدية</div>
+          <div class="text-gray-600 text-sm">الخرج</div>
+        </div>
+
+        <!-- Card: Name -->
+        <div
+          class="bg-gray-50 rounded-lg p-3 border border-gray-200 card-shadow text-right"
+        >
+          <div class="text-gray-900 font-bold text-sm mb-1">الاسم</div>
+          <div class="text-gray-600 text-sm">
+            شعلان فهيم محمود محمد          </div>
+        </div>
+
+        <!-- Card: ID Number -->
+        <div
+          class="bg-gray-50 rounded-lg p-3 border border-gray-200 card-shadow text-right"
+        >
+          <div class="text-gray-900 font-bold text-sm mb-1">رقم الاقامة</div>
+          <div class="text-gray-600 text-sm">2577768993</div>
+        </div>
+
+        <!-- Card: Gender -->
+        <div
+          class="bg-gray-50 rounded-lg p-3 border border-gray-200 card-shadow text-right"
+        >
+          <div class="text-gray-900 font-bold text-sm mb-1">الجنس</div>
+          <div class="text-gray-600 text-sm">ذكر</div>
+        </div>
+
+        <!-- Card: Nationality -->
+        <div
+          class="bg-gray-50 rounded-lg p-3 border border-gray-200 card-shadow text-right"
+        >
+          <div class="text-gray-900 font-bold text-sm mb-1">الجنسية</div>
+          <div class="text-gray-600 text-sm">اليمن</div>
+        </div>
+
+        <!-- Card: Certificate Number -->
+        <div
+          class="bg-gray-50 rounded-lg p-3 border border-gray-200 card-shadow text-right"
+        >
+          <div class="text-gray-900 font-bold text-sm mb-1">
+            رقم الشهادة الصحية
+          </div>
+          <div class="text-gray-600 text-sm">460028850230</div>
+        </div>
+
+        <!-- Card: Profession -->
+        <div
+          class="bg-gray-50 rounded-lg p-3 border border-gray-200 card-shadow text-right"
+        >
+          <div class="text-gray-900 font-bold text-sm mb-1">المهنة</div>
+          <div class="text-gray-600 text-sm">عامل مطبخ</div>
+        </div>
+
+        <!-- Card: Issue Date Hijri -->
+        <div
+          class="bg-gray-50 rounded-lg p-3 border border-gray-200 card-shadow text-right"
+        >
+          <div class="text-gray-900 font-bold text-sm mb-1">
+            تاريخ إصدار الشهادة الصحية هجري
+          </div>
+          <div class="text-gray-600 text-sm">1447/06/25</div>
+        </div>
+
+        <!-- Card: Issue Date Gregorian -->
+        <div
+          class="bg-gray-50 rounded-lg p-3 border border-gray-200 card-shadow text-right"
+        >
+          <div class="text-gray-900 font-bold text-sm mb-1">
+            تاريخ إصدار الشهادة الصحية ميلادي
+          </div>
+          <div class="text-gray-600 text-sm">2025/12/16</div>
+        </div>
+
+        <!-- Card: Expiry Date Hijri -->
+        <div
+          class="bg-gray-50 rounded-lg p-3 border border-gray-200 card-shadow text-right"
+        >
+          <div class="text-gray-900 font-bold text-sm mb-1">
+            تاريخ نهاية الشهادة الصحية هجري
+          </div>
+          <div class="text-gray-600 text-sm">1448/06/25</div>
+        </div>
+
+        <!-- Card: Expiry Date Gregorian -->
+        <div
+          class="bg-gray-50 rounded-lg p-3 border border-gray-200 card-shadow text-right"
+        >
+          <div class="text-gray-900 font-bold text-sm mb-1">
+            تاريخ نهاية الشهادة الصحية ميلادي
+          </div>
+          <div class="text-gray-600 text-sm">2026/12/16</div>
+        </div>
+
+        <!-- Card: Program Type  -->
+        <div
+          class="bg-gray-50 rounded-lg p-3 border border-gray-200 card-shadow text-right"
+        >
+          <div class="text-gray-900 font-bold text-sm mb-1">
+            نوع البرنامج التثقيفي
+          </div>
+          <div class="text-gray-600 text-sm">منشأة الغذاء</div>
+        </div>
+
+        <!-- Card: Program End Date -->
+        <div
+          class="bg-gray-50 rounded-lg p-3 border border-gray-200 card-shadow text-right"
+        >
+          <div class="text-gray-900 font-bold text-sm mb-1">
+            تاريخ انتهاء البرنامج التثقيفي
+          </div>
+          <div class="text-gray-600 text-sm">1450/06/25</div>
+        </div>
+
+        <!-- Card: License Number -->
+        <div
+          class="bg-gray-50 rounded-lg p-3 border border-gray-200 card-shadow text-right"
+        >
+          <div class="text-gray-900 font-bold text-sm mb-1">رقم الرخصة</div>
+          <div class="text-gray-600 text-sm">451115742130</div>
+        </div>
+
+        <!-- Card: Establishment Name -->
+        <div
+          class="bg-gray-50 rounded-lg p-3 border border-gray-200 card-shadow text-right"
+        >
+          <div class="text-gray-900 font-bold text-sm mb-1">اسم المنشأة</div>
+          <div class="text-gray-600 text-sm">
+            مؤسسة سليمان خالد سليمان الداود للخردة والسكراب
+          </div>
+        </div>
+
+        <!-- Card: Establishment Number -->
+        <div
+          class="bg-gray-50 rounded-lg p-3 border border-gray-200 card-shadow text-right"
+        >
+          <div class="text-gray-900 font-bold text-sm mb-1">رقم المنشأة</div>
+          <div class="text-gray-600 text-sm">7035773741</div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-10 py-6 border-t border-gray-200 bg-white">
+      <div class="flex flex-col items-center justify-center gap-4">
+        <!-- Vision 2030 Logo -->
+        <img src="Vision 2030.jpg" alt="Vision 2030" class="h-14 opacity-80">
+
+        <div class="text-gray-500 text-xs mt-2">
+          © 2025 وزارة الشؤون البلدية والقروية والإسكان
+        </div>
+
+        <div class="flex gap-4 text-gray-500 text-xs">
+          <a href="#">اتصل بنا</a>
+          <a href="#">شروط الاستخدام</a>
+          <a href="#">خريطة الموقع</a>
+        </div>
+
+        <!-- Bottom Indicator Bar (Phone UI element simulation) -->
+        <div class="w-1/3 h-1 bg-gray-300 rounded-full mt-4"></div>
+      </div>
+    </footer>
+  </body>
+</html>
